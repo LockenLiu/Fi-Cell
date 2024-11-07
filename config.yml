@@ -1,0 +1,33 @@
+BASE_OUTPUT_DIR: FiCell-EXAMPLE
+
+RNA_AND_ATAC_INPUT:
+  - id: Astro
+    rna_path: example/rna/Astrocytes.500.chr3.Seurat.rds
+    atac_path: example/atac/Astrocytes.500.chr3.SE.rds
+  - id: EN
+    rna_path: example/rna/Excitatory-neurons.500.chr3.Seurat.rds
+    atac_path: example/atac/Excitatory-neurons.500.chr3.SE.rds
+  - id: SST-IN
+    rna_path: example/rna/Somatostatin-interneurons.500.chr3.Seurat.rds
+    atac_path: example/atac/Somatostatin-interneurons.500.chr3.SE.rds
+
+GWAS_SUMSTATS_INPUT:
+  - id: BMI
+    path: example/gwas_sumstat/BMI.sumstats.gz
+  - id: Intelligence
+    path: example/gwas_sumstat/Intelligence.sumstats.gz
+  - id: yeas_of_education
+    path: example/gwas_sumstat/yeas_of_education.sumstats.gz
+
+WINDOW_DEFINITION:
+    WINDOW_SIZE_KB:
+        250
+    
+SNP_COORDINATE:
+    hg38:
+        data/hm3SNP-coordinate-hg38.tsv
+    hg19:
+        data/hm3SNP-coordinate-hg19.tsv
+
+BASELINE_MODEL_DIR:
+    data/ldsc/baseline_v1.2
