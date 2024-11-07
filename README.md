@@ -25,7 +25,7 @@ cd Fi-Cell
 
 In order to void any issues with software versioning, Fi-Cell utilises conda environments to automatically install all necessary dependencies. If conda is not present on your system, please install [anaconda](https://www.anaconda.com) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) following the official instructions.
 
-Once conda is ready, users can create an environment to install dependencies that Fi-Cell needs though the following commands:
+Once conda is ready, users can create an environment to install dependencies that Fi-Cell needs through the following commands:
 
 ```shell
 conda install -c conda-forge mamba
