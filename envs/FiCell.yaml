@@ -1,1 +1,14 @@
-
+name: FiCell # USED FOR EVERYTHING PYTHON EXCEPT
+channels:
+  - anaconda
+  - defaults
+  - conda-forge
+  - bioconda
+  - joonatan 
+dependencies:
+  - python=3.9.18
+  - snakemake=7.32.4
+  - pybedtools=0.10.0
+  - pandas=2.2.2
+  - r-base=4.3.0
+  - r-Seurat=5.0.1
