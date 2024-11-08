@@ -43,6 +43,7 @@ devtools::install_github("buenrostrolab/FigR")
 cd your/dir/of/Fi-Cell
 git clone https://github.com/bulik/ldsc.git
 cd ldsc
+conda activate
 conda env create --file environment.yml
 ```
 
@@ -51,6 +52,7 @@ conda env create --file environment.yml
 **Quick Run Fi-Cell**
 
 ```shell
+conda activate FiCell
 snakemake --use-conda -j --snakefile Fi-Cell.snakefile --configfile config.yml -j
 ```
 
