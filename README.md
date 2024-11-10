@@ -37,6 +37,7 @@ Fi-Cell integrates [FigR](https://github.com/buenrostrolab/FigR) and [ldsc](http
 
 ```R
 devtools::install_github("buenrostrolab/FigR")
+BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
 ```
 
 ```shell
