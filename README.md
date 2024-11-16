@@ -54,7 +54,7 @@ conda env create --file environment.yml
 
 ```shell
 conda activate FiCell
-snakemake --use-conda -j --snakefile Fi-Cell.snakefile --configfile config.yml -j
+snakemake --use-conda --snakefile Fi-Cell.snakefile --configfile config.yml -j
 ```
 
 We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
