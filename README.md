@@ -5,7 +5,7 @@
 ## **Overview**
 
 <p align="center">
-    <img src="pic/figure-guthub.pdf" width="550"/>
+    <img src="pic/figure-guthub.png" width="550"/>
 </p>
 
 
