@@ -47,7 +47,7 @@ cd ldsc
 conda activate
 conda env create --file environment.yml
 ```
-##### Data of directory `Fi-Cell/data` and `Fi-Cell/example` are deposited on [`Google Cloud platform`](https://console.cloud.google.com/storage/browser/ficell), please make them ready before running.
+##### Data in directories `Fi-Cell/data` and `Fi-Cell/example` are deposited on [`Google Cloud platform`](https://console.cloud.google.com/storage/browser/ficell), please make them ready before running.
 Website link: [https://console.cloud.google.com/storage/browser/ficell](https://console.cloud.google.com/storage/browser/ficell)
 
 ## **Getting Started** 
