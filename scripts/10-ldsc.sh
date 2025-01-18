@@ -4,8 +4,6 @@ cell=$3
 celllddir=$4
 trait=$5
 traitgwassumstatsdir=$6
-conditionlddir=$7
-conditionprefix=$8
 
 mkdir ${outdir}/res
 
