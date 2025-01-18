@@ -119,7 +119,7 @@ python /your/path/to/Fi-Cell/ldsc/munge_sumstats.py \
 
 **Step 3: Run Fi-Cell**
 
-Now you have everything Fi-Cell needs, then you can run the analyses workflow under your installation directory by:
+Before running, you should change some parameters in the `config.yml`. After you have everything ready for Fi-Cell, you can run the analyses workflow under your installation directory by:
 
 ```shell
 conda activate FiCell
