@@ -1,6 +1,7 @@
 # Fi-Cell
 
-- **F**unctional **i**nference of phenotype **C**ritical c**ell**;
+- **F**unctional **i**nference of phenotype **C**ritical c**ell**
+- in a functional perspective with high **Fi**delity
 
 ## **Overview**
 
@@ -20,11 +21,11 @@ cd Fi-Cell
 
 ## **Prerequisites**
 
-### Anaconda or Miniconda distribution
+#### Anaconda or Miniconda distribution
 
 In order to void any issues with software versioning, Fi-Cell utilises conda environments to automatically install all necessary dependencies. If conda is not present on your system, please install [anaconda](https://www.anaconda.com) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) following the official instructions.
 
-Once conda is ready, users can create an environment to install dependencies that Fi-Cell needs through the following commands:
+#### Once conda is ready, users can create an environment to install dependencies that Fi-Cell needs through the following commands:
 
 ```shell
 conda install -c conda-forge mamba
@@ -32,7 +33,7 @@ mamba env create --file envs/FiCell.yaml
 conda activate FiCell
 ```
 
-Fi-Cell integrates [FigR](https://github.com/buenrostrolab/FigR) and [ldsc](https://github.com/bulik/ldsc), please install them before running Fi-Cell.
+#### Fi-Cell integrates [FigR](https://github.com/buenrostrolab/FigR) and [ldsc](https://github.com/bulik/ldsc), please install them before running Fi-Cell.
 
 ```R
 devtools::install_github("buenrostrolab/FigR")
@@ -46,6 +47,7 @@ cd ldsc
 conda activate
 conda env create --file environment.yml
 ```
+#### Data of directory `Fi-Cell/data` and `Fi-Cell/example` are deposited on ['Google Cloud platform'](https://console.cloud.google.com/storage/browser/ficell), please make them ready before running.
 
 ## **Getting Started** 
 
