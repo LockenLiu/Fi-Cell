@@ -65,7 +65,7 @@ We recommend running with `-j` as it will use all available cores. Specifying `-
 
 
 
-**Step 1: Integrated scRNA and scATAC data **
+** Step 1: Integrated scRNA and scATAC data **
 
 For each cell type, Fi-Cell takes scRNA and scATAC datasets with identical cell counts as input. 
 
@@ -98,7 +98,7 @@ The demanding requirements of Fi-Cell input can be easily satisfied with scRNA a
 3. After collecting scRNA and scATAC datasets with unified cell annotations, however, the cell counts are not identical in the two matrix, and cellular individuals are not matched. Once again, it's OK to randomly match cellular individuals (randomly sampling cells to meet identical cell counts), however, strategies like `scOptmatch` can be used to match cell individual optimally. 
    1. `scOptmatch`:  enabling approximately one-to-one pairing of cells of similar annotations between assays [available at:https://github.com/buenrostrolab/FigR/blob/HEAD/R/cellPairing.R]
 
-***** *Though Fi-Cell can work well on embedded datasets, we still more encourage multi-modal dataset for more anthentic and robust significances.* 
+* *Though Fi-Cell can work well on embedded datasets, we still more encourage multi-modal dataset for more anthentic and robust significances.* 
 
 **Step 2: GWAS Summary Statistics File**
 
