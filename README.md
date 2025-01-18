@@ -119,7 +119,7 @@ python /your/path/to/Fi-Cell/ldsc/munge_sumstats.py \
 
 **Step 3: Run Fi-Cell**
 
-Now you have everything Fi-Cell needs, then you can run the analysis workflow under your installation directory by:
+Now you have everything Fi-Cell needs, then you can run the analyses workflow under your installation directory by:
 
 ```shell
 conda activate FiCell
@@ -127,6 +127,13 @@ snakemake --use-conda --snakefile Fi-Cell.snakefile --configfile config.yml -j
 ```
 
 We recommend running with `-j` as it will use all available cores. Specifying `-j 4` will use up to 4 cores. 
+
+If there a lot of overlapped SNPs in cell types, `Fi-Cell-condition.snakefile` is recommended. Then S-LDSC analyses will be conditioned on SNPs shared in all cell types. The result of workflow organized by `Fi-Cell.snakefile` is not conditioned, for there were only a few overlapped SNPs in all cell types in our primary analyses. Run the analyses workflow under your installation directory by:
+
+```shell
+conda activate FiCell
+snakemake --use-conda --snakefile Fi-Cell-condition.snakefile --configfile config.yml -j
+```
 
 **Step 4: Inspect the output**
 
