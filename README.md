@@ -1,13 +1,13 @@
 # Fi-Cell
 
 - **F**unctional **i**nference of phenotype **C**ritical c**ell**
-- in a functional perspective with high **Fi**delity
 
 ## **Overview**
 
 <p align="center">
-    <img src="pic/figure-guthub.png" width="750"/>
+    <img src="./fi2.png" width="1000"/>
 </p>
+
 
 
 ## **Installation**
@@ -33,12 +33,7 @@ mamba env create --file envs/FiCell.yaml
 conda activate FiCell
 ```
 
-##### Fi-Cell integrates [FigR](https://github.com/buenrostrolab/FigR) and [ldsc](https://github.com/bulik/ldsc), please install them before running Fi-Cell.
-
-```R
-devtools::install_github("buenrostrolab/FigR")
-BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
-```
+##### Fi-Cell integrates a [ldsc](https://github.com/bulik/ldsc) frame, please install it before running Fi-Cell.
 
 ```shell
 cd your/dir/to/Fi-Cell
@@ -88,6 +83,20 @@ scATAC data:
 |  Peak 3  |   1    |   1    |   0    | ...  |    0     |
 |    …     |   …    |   …    |   …    |  …   |    …     |
 | Peak 398 |   0    |   2    |   0    | ...  |    1     |
+
+and they should be merged into one [Signac](https://stuartlab.org/signac/) obeject, an example is:
+
+> ```R
+> > sce
+> An object of class Seurat 
+> 268233 features across 10000 samples within 3 assays 
+> Active assay: peaks (169086 features, 169086 variable features)
+>  2 layers present: counts, data
+>  2 other assays present: RNA, SCT
+>  1 dimensional reduction calculated: pca
+> ```
+
+
 
 The demanding requirements of Fi-Cell input can be easily satisfied with scRNA and scATAC co-assays. However, if you expect to **apply Fi-Cell to independent scRNA and scATAC datasets, datasets embedding can be pivotal**. Here are some suggestions:
 
@@ -141,20 +150,27 @@ An output directory of Fi-Cell  is shown:
 
 ```
 <your Fi-Cell output dir>/
-├── precomputaion/
-│   ├── cisCor 
+├── precomputaion
+│   ├──cisCor
+│   │			└── <cell_type>
+│   │						├── <cell_type>.pval5e-2.snpped.tsv
+│   │						├── <cell_type>.snpped.tsv
+│   │						├── chr*.tsv
+│   │						└── signac_peak_gene_links.tsv
 │   ├── SNPs
+│   │			└── <cell_type>.pval5e-2.SNPs
 │   ├── bed
+│   │			└── <cell_type>.bed
 │   ├── Allcell-ldscore
 │   └── ldscore
 └── res/
 ```
 
 * `precomputation/cisCor/`: peak-gene connections
-  * `[celltype].cisCor.tsv`: All peak-gene connections
-  * `[celltype].cisCor.snpped.tsv`: All peak-gene connections with HapMap3 SNPs under peak
-  * `[celltype].cisCorfilt.pval5e-2.tsv`: Significantly correlated peak-gene connections with HapMap3 SNPs under peak
-  * `[celltype].cisCorfilt.pval5e-2.cts.tsv`: Cell type-specific significantly correlated peak-gene connections with HapMap3 SNPs under peak
+  * `[cell_type]/chr*.tsv`: peak-gene connections from each chromosome.
+  * `[cell_type]/signac_peak_gene_links.tsv`: All peak-gene connections
+  * `[cell_type].snpped.tsv`: All peak-gene connections with HapMap3 SNPs under peak
+  * `[cell_type].pval5e-2.snpped.tsv`: Significantly correlated peak-gene connections with HapMap3 SNPs under peak
 * `precomputation/SNPs/`: hapmap3 SNPs uner peaks of cisCor
 * `precomputation/bed/`: bed files of SNPs, used to construct the annotation
 * `precomputation/Allcell-ldscore/`: merged cell type genomic annotations of all cell types
@@ -166,3 +182,7 @@ An output directory of Fi-Cell  is shown:
 Jun-Hui Liu (Xi’an Jiaotong University, China)
 
 Ruo-Han Hao (Xi’an Jiaotong University, China)
+
+Xi-Cheng Yang (Xi’an Jiaotong University, China)
+
+Yu-Meng Gao (Xi’an Jiaotong University, China)
