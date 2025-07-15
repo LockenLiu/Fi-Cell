@@ -10,7 +10,7 @@ import warnings
 
 def build_dict_from_key_value_pairs_sc(list_of_dicts):
 	'''
-	Each dict in the list MUST contain the keys 'id', 'rna_path', and 'atac_path'.
+	Each dict in the list MUST contain the keys 'id', 'sce_path', and 'cts_score_path'.
 	path will be converted to absolute paths.
 	Takes the list of dictionaries and makes it into a new dictionary where the keys are the id values from each dictionary and the values are each dictionary
 	e.g. [{"id":"a", "value": 1}, {"id":"b","value":2}] ->
@@ -18,14 +18,14 @@ def build_dict_from_key_value_pairs_sc(list_of_dicts):
 	'''
 	out_dict = {}
 	for d in list_of_dicts:
-		d['rna_path'] = os.path.abspath(d['rna_path'])
-		d['atac_path'] = os.path.abspath(d['atac_path'])
+		d['sce_path'] = os.path.abspath(d['sce_path'])
+		d['cts_score_path'] = os.path.abspath(d['cts_score_path'])
 		out_dict[d['id']] = d
 	return(out_dict)
 
 def build_dict_from_key_value_pairs_gwas(list_of_dicts):
 	'''
-	Each dict in the list MUST contain the keys 'id', 'rna_path', and 'atac_path'.
+	Each dict in the list MUST contain the keys 'id', and 'sce_path'.
 	path will be converted to absolute paths.
 	Takes the list of dictionaries and makes it into a new dictionary where the keys are the id values from each dictionary and the values are each dictionary
 	e.g. [{"id":"a", "value": 1}, {"id":"b","value":2}] ->
@@ -39,4 +39,4 @@ def build_dict_from_key_value_pairs_gwas(list_of_dicts):
 
 ##############################
 GWAS_SUMSTATS = build_dict_from_key_value_pairs_gwas(config['GWAS_SUMSTATS_INPUT'])
-SC_SUMSTATS = build_dict_from_key_value_pairs_sc(config['RNA_AND_ATAC_INPUT'])
+SC_SUMSTATS = build_dict_from_key_value_pairs_sc(config['SCE_INPUT'])
