@@ -111,13 +111,12 @@ The demanding requirements of Fi-Cell input can be easily satisfied with scRNA a
 
 **Step 2: cell type specificity of gene expression file**
   Fi-Cell needs gene expression specificity files for each cell type, formatted as follows:
-| :------: | :----: |
-|  gene 1  |   0.8    | 
-|  gene 2  |   0    | 
-|  gene 3  |   0.9994    | 
-|  gene 4  |   1    | 
-|    …     |   …    |  
-| gene 20000 |   1    | 
+| gene1     | 0.8     |
+| gene2     | 0       |
+| gene3     | 0.9994  |
+| gene4     | 1       |
+| ...       | ...     |
+| gene20000 | 1       |
 
 Some pipelines to obtain cell type specificity files are recommended:
    1. `sclinker`: identifying disease critical cell types and programs from single cell RNAseq. [available at: [https://github.com/SydneyBioX/scJoint](https://github.com/karthikj89/scgenetics)]
