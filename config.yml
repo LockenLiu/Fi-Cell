@@ -1,33 +1,33 @@
 BASE_OUTPUT_DIR: FiCell-EXAMPLE
 
-RNA_AND_ATAC_INPUT:
-  - id: Astro
-    rna_path: example/rna/Astrocytes.500.chr3.Seurat.rds
-    atac_path: example/atac/Astrocytes.500.chr3.SE.rds
-  - id: EN
-    rna_path: example/rna/Excitatory-neurons.500.chr3.Seurat.rds
-    atac_path: example/atac/Excitatory-neurons.500.chr3.SE.rds
-  - id: SST-IN
-    rna_path: example/rna/Somatostatin-interneurons.500.chr3.Seurat.rds
-    atac_path: example/atac/Somatostatin-interneurons.500.chr3.SE.rds
-
+SCE_INPUT:
+- id: Astro_500
+  sce_path: ./example/signac_4/Astro_500.rds
+  cts_score_path: ./sclinker/rna_GSE207334/Astro_Lcluster.txt
+- id: L2_3_IT_500
+  sce_path: ./example/signac_4/L2_3_IT_500.rds
+  cts_score_path: ./sclinker/rna_GSE207334/L2_3_IT_Lcluster.txt
+    
 GWAS_SUMSTATS_INPUT:
-  - id: BMI
-    path: example/gwas_sumstat/BMI.sumstats.gz
-  - id: Intelligence
-    path: example/gwas_sumstat/Intelligence.sumstats.gz
-  - id: yeas_of_education
-    path: example/gwas_sumstat/yeas_of_education.sumstats.gz
+- id: MDD
+  path: ./example/gwas/MDD.sumstats.gz
+- id: BMI
+  path: ./example/gwas/BMI.sumstats.gz
+- id: intelligence
+  path: ./example/gwas/Intelligence.sumstats.gz
 
 WINDOW_DEFINITION:
-    WINDOW_SIZE_KB:
-        250
+    max_peak_TSS_distance:
+        500000
     
 SNP_COORDINATE:
     hg38:
         data/hm3SNP-coordinate-hg38.tsv
     hg19:
         data/hm3SNP-coordinate-hg19.tsv
+    
+TSS_COORDINATE_hg19:
+    data/IGVF_portal_genes_file.tsv
 
 BASELINE_MODEL_DIR:
     data/ldsc/baseline_v1.2
