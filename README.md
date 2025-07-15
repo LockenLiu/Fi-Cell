@@ -84,7 +84,7 @@ scATAC data:
 |    …     |   …    |   …    |   …    |  …   |    …     |
 | Peak 398 |   0    |   2    |   0    | ...  |    1     |
 
-and they should be merged into one [Signac](https://stuartlab.org/signac/) obeject, an example is:
+and they should be merged into one [Signac](https://stuartlab.org/signac/) obeject, a guide to obtain the object is available at [E2G_Method_Tutorials](https://github.com/elizabethdorans/E2G_Method_Tutorials/blob/main/Signac/Signac_preprocessing.R), an example is:
 
 > ```R
 > > sce
