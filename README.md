@@ -111,6 +111,7 @@ The demanding requirements of Fi-Cell input can be easily satisfied with scRNA a
 
 **Step 2: cell type specificity of gene expression file**
   Fi-Cell needs gene expression specificity files for each cell type, formatted as follows:
+
 | gene1     | 0.8     |
 | gene2     | 0       |
 | gene3     | 0.9994  |
