@@ -109,7 +109,20 @@ The demanding requirements of Fi-Cell input can be easily satisfied with scRNA a
 
 * *Though Fi-Cell can work well on embedded datasets, we still more encourage multi-modal dataset for more anthentic and robust significances.* 
 
-**Step 2: GWAS Summary Statistics File**
+**Step 2: cell type specificity of gene expression file**
+  Fi-Cell needs gene expression specificity files for each cell type, formatted as follows:
+|  gene 1  |   0.8    | 
+|  gene 2  |   0    | 
+|  gene 3  |   0.9994    | 
+|  gene 4  |   1    | 
+|    …     |   …    |  
+| gene 20000 |   1    | 
+
+Some pipelines to obtain cell type specificity files are recommended:
+   1. `sclinker`: identifying disease critical cell types and programs from single cell RNAseq. [available at: [https://github.com/SydneyBioX/scJoint](https://github.com/karthikj89/scgenetics)]
+   2. `CELLEX`: CELL-type EXpression-specificity, a tool for computing cell-type Expression Specificity (ES) profiles. [available at: [https://github.com/TianLab-Bioinfo/AtacAnnoR](https://github.com/perslab/CELLEX)]
+
+**Step 3: GWAS Summary Statistics File**
 
 An  explanation of summary statistics file format is at https://github.com/bulik/ldsc/wiki/Summary-Statistics-File-Format.
 
@@ -126,7 +139,7 @@ python /your/path/to/Fi-Cell/ldsc/munge_sumstats.py \
 		--out /your/path/to/Fi-Cell/example/gwas_sumstat/BMI
 ```
 
-**Step 3: Run Fi-Cell**
+**Step 4: Run Fi-Cell**
 
 Before running, you should change some parameters in the `config.yml`. After you have everything ready for Fi-Cell, you can run the analyses workflow under your installation directory by:
 
@@ -144,7 +157,7 @@ conda activate FiCell
 snakemake --use-conda --snakefile Fi-Cell-condition.snakefile --configfile config.yml -j
 ```
 
-**Step 4: Inspect the output**
+**Step 5: Inspect the output**
 
 An output directory of Fi-Cell  is shown:
 
