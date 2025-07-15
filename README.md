@@ -151,16 +151,16 @@ An output directory of Fi-Cell  is shown:
 ```
 <your Fi-Cell output dir>/
 ├── precomputaion
-│   ├──cisCor
-│   │			└── <cell_type>
-│   │						├── <cell_type>.pval5e-2.snpped.tsv
-│   │						├── <cell_type>.snpped.tsv
-│   │						├── chr*.tsv
-│   │						└── signac_peak_gene_links.tsv
+│   ├── cisCor
+│   │	└── <cell_type>
+│   │		├── <cell_type>.pval5e-2.snpped.tsv
+│   │		├── <cell_type>.snpped.tsv
+│   │		├── chr*.tsv
+│   │		└── signac_peak_gene_links.tsv
 │   ├── SNPs
-│   │			└── <cell_type>.pval5e-2.SNPs
+│   │	└── <cell_type>.pval5e-2.SNPs
 │   ├── bed
-│   │			└── <cell_type>.bed
+│   │	└── <cell_type>.bed
 │   ├── Allcell-ldscore
 │   └── ldscore
 └── res/
