@@ -123,8 +123,8 @@ The demanding requirements of Fi-Cell input can be easily satisfied with scRNA a
 
 
 Some pipelines to obtain cell type specificity files are recommended:
-   1. `sclinker`: identifying disease critical cell types and programs from single cell RNAseq. [available at: [https://github.com/SydneyBioX/scJoint](https://github.com/karthikj89/scgenetics)]
-   2. `CELLEX`: CELL-type EXpression-specificity, a tool for computing cell-type Expression Specificity (ES) profiles. [available at: [https://github.com/TianLab-Bioinfo/AtacAnnoR](https://github.com/perslab/CELLEX)]
+   1. `sclinker`: identifying disease critical cell types and programs from single cell RNAseq. [available at: [karthikj89/scgenetics](https://github.com/karthikj89/scgenetics)]
+   2. `CELLEX`: CELL-type EXpression-specificity, a tool for computing cell-type Expression Specificity (ES) profiles. [available at: [perslab/CELLEX](https://github.com/perslab/CELLEX)]
 
 **Step 3: GWAS Summary Statistics File**
 
