@@ -5,7 +5,7 @@
 ## **Overview**
 
 <p align="center">
-    <img src="./FiCell-illustration.pdf" width="1000"/>
+    <img src="./FiCell-illustration.png" width="1000"/>
 </p>
 
 
