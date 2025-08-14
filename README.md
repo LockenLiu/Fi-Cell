@@ -1,6 +1,6 @@
 # Fi-Cell
 
-- **F**unctional **i**nference of phenotype **C**ritical c**ell**
+- **F**unctional **i**nference of **C**ritical c**ell**
 
 ## **Overview**
 
