@@ -42,7 +42,7 @@ cd ldsc
 conda activate
 conda env create --file environment.yml
 ```
-##### Data in directories `Fi-Cell/data` and `Fi-Cell/example` are deposited on [`Google Drive`](https://drive.google.com/drive/folders/1WQjvHP6bLsjQ8JoEMizSaX6UtOIUyZ3g?dmr=1&ec=wgc-drive-globalnav-goto), please download them ready before running.
+##### Data in directories `Fi-Cell/data` and `Fi-Cell/example` are available at [`Google Drive`](https://drive.google.com/drive/folders/1WQjvHP6bLsjQ8JoEMizSaX6UtOIUyZ3g?dmr=1&ec=wgc-drive-globalnav-goto), please download them ready before running.
 
 
 
