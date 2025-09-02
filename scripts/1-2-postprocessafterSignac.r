@@ -1,3 +1,10 @@
+#########################################################################
+# File Name: 1-2-postprocessafterSignac.r
+# Author: LockenLiu
+# Last Modified: 2025-8-20
+# This script is modified based on:  https://github.com/elizabethdorans/E2G_Method_Tutorials/blob/main/Signac/Signac_postprocessing.R
+#########################################################################
+
 suppressPackageStartupMessages(library(data.table))
 suppressPackageStartupMessages(library(argparse))
 suppressPackageStartupMessages(library(stringr))

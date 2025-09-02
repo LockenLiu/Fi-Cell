@@ -1,3 +1,10 @@
+#########################################################################
+# File Name: 1-1-get_pg_pair_Signac.r
+# Author: LockenLiu
+# Last Modified: 2025-8-20
+# This script is modified based on:  https://github.com/elizabethdorans/E2G_Method_Tutorials/blob/main/Signac/run_Signac_single_chromosome.R
+#########################################################################
+
 suppressPackageStartupMessages(library(Signac))
 suppressPackageStartupMessages(library(Seurat))
 suppressPackageStartupMessages(library(argparse))
@@ -40,22 +47,22 @@ print("Reading in Seurat object!")
 data <- readRDS(seurat_object)
 
 # Define set of genes on chromosome for peak-gene linking
-annot <- Annotation(object = data[["peaks"]])
+annot <- Annotation(object = data[["ATAC"]])
 gene_coords = as.data.table(annot)[, c("seqnames", "gene_name")]
 gene_coords = unique(gene_coords)
 gene_set = gene_coords[seqnames == sprintf("chr%s", chromosome), ]$gene_name
 
 sprintf("Linking across %s possible genes on chromosome %s!", length(gene_set), chromosome)
 
-DefaultAssay(data) <- "peaks"
+DefaultAssay(data) <- "ATAC"
 
 data <- LinkPeaks(
     object = data,
-    peak.assay = "peaks",
+    peak.assay = "ATAC",
     expression.assay = "SCT",
     genes.use = gene_set,
     distance = max_peak_TSS_distance,
-    pvalue_cutoff = 1,
+    pvalue_cutoff = 0.05,
     score_cutoff = 0
 )
 

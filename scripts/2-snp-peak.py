@@ -1,3 +1,9 @@
+#########################################################################
+# File Name: 2-snp-peak.py
+# Author: LockenLiu
+# Last Modified: 2025-8-20
+#########################################################################
+
 import pandas as pd
 import os
 from pybedtools import BedTool

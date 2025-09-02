@@ -1,10 +1,9 @@
 #########################################################################
 # File Name: 4-SNP2bed.r
-# Author: Jun-hui Liu
-# Last Modified: 2024-6-11
-# Description: SNP2bed.r
-# Usage: Fi-Cell
+# Author: LockenLiu
+# Last Modified: 2025-8-20
 #########################################################################
+
 library(dplyr)
 library(getopt)
 

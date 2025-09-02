@@ -1,3 +1,9 @@
+#########################################################################
+# File Name: clean_bed.sh
+# Author: LockenLiu
+# Last Modified: 2025-8-20
+#########################################################################
+
 input_cell=/mu03_ext2/liujunhui/Fi-Cell-main/FiCell-3/precomputation/bed/ADARB2.rawbed
 input_cell=$1
 names=`ls $input_cell | cut -f 1 -d '.'`
