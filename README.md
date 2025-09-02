@@ -33,7 +33,7 @@ mamba env create --file envs/FiCell.yaml
 conda activate FiCell
 ```
 
-##### Fi-Cell integrates a [ldsc](https://github.com/bulik/ldsc) frame, please install it before running Fi-Cell.
+##### Fi-Cell integrates a [ldsc](https://github.com/bulik/ldsc) tool, please install it before running Fi-Cell.
 
 ```shell
 cd your/dir/to/Fi-Cell
