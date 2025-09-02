@@ -1,10 +1,9 @@
 #########################################################################
-# File Name: 3-get-cts-peak-gene-pair-and-snps-under-peak.r
-# Author: Jun-hui Liu
-# Last Modified: 2025-6-10
-# Description: get cts peak gene pair and snps under peak
-# Usage: Fi-Cell
+# File Name: 3-get-sig-peak-gene-pair-and-snps-under-peak.r
+# Author: LockenLiu
+# Last Modified: 2025-8-20
 #########################################################################
+
 library(dplyr)
 library(getopt)
 library(tidyr)
