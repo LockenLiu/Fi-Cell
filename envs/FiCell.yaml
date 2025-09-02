@@ -14,3 +14,4 @@ dependencies:
   - r-Seurat=5.0.1
   - r-getopt=1.20.4
   - r-Signac=1.13.9
+  - r-argparse=2.2.5
