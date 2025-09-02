@@ -47,18 +47,18 @@ print("Reading in Seurat object!")
 data <- readRDS(seurat_object)
 
 # Define set of genes on chromosome for peak-gene linking
-annot <- Annotation(object = data[["ATAC"]])
+annot <- Annotation(object = data[["peaks"]])
 gene_coords = as.data.table(annot)[, c("seqnames", "gene_name")]
 gene_coords = unique(gene_coords)
 gene_set = gene_coords[seqnames == sprintf("chr%s", chromosome), ]$gene_name
 
 sprintf("Linking across %s possible genes on chromosome %s!", length(gene_set), chromosome)
 
-DefaultAssay(data) <- "ATAC"
+DefaultAssay(data) <- "peaks"
 
 data <- LinkPeaks(
     object = data,
-    peak.assay = "ATAC",
+    peak.assay = "peaks",
     expression.assay = "SCT",
     genes.use = gene_set,
     distance = max_peak_TSS_distance,
