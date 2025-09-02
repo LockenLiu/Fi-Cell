@@ -3,10 +3,10 @@ BASE_OUTPUT_DIR: FiCell-EXAMPLE
 SCE_INPUT:
 - id: Astro_500
   sce_path: ./example/Signac_obj/Astro_500.rds
-  cts_score_path: ./sclinker_score/Astro_Lcluster.txt
+  cts_score_path: ./example/sclinker_score/Astro_Lcluster.txt
 - id: L2_3_IT_500
   sce_path: ./example/Signac_obj/L2_3_IT_500.rds
-  cts_score_path: ./sclinker_score/L2_3_IT_Lcluster.txt
+  cts_score_path: ./example/sclinker_score/L2_3_IT_Lcluster.txt
     
 GWAS_SUMSTATS_INPUT:
 - id: MDD
