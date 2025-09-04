@@ -111,6 +111,7 @@ The demanding requirements of Fi-Cell input can be easily satisfied with scRNA a
 * *Though Fi-Cell can work well on embedded datasets, we still more encourage multi-modal dataset for existing regulatory effects and more robust phenotype-cell type associations.* 
 
 **Step 2: cell type specificity of gene expression file**
+
 Fi-Cell requires gene expression specificity files in each cell type, functioning as probablistic scores to constrcuct genomin annotions, formatted as follows (no column names in our examples):
 
 |   Gene   | Specificity |
