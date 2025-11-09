@@ -26,7 +26,7 @@ SNP_COORDINATE:
     hg19:
         data/hm3SNP-coordinate-hg19.tsv
     
-TSS_COORDINATE_hg19:
+TSS_COORDINATE_GRCh38:
     data/IGVF_portal_genes_file.tsv
 
 BASELINE_MODEL_DIR:
