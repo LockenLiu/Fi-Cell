@@ -1,6 +1,6 @@
 # Fi-Cell
 
-- **F**unctional **i**nference of **C**ritical c**ell**: dissect phenotype genetics to cell types leveraging critical regulatory effects in single-cell multi-omics
+- **F**unctional **i**nference of **C**ritical c**ell**: Prioritizing relevant cell types for GWAS phenotypes leveraging single-cell multi-omics data
 
 ## **Overview**
 
@@ -23,7 +23,7 @@ cd Fi-Cell
 
 ##### Anaconda or Miniconda distribution
 
-In order to void any issues with software versions, Fi-Cell utilises conda environments to automatically install all necessary dependencies. If conda is not present on your system, please install [anaconda](https://www.anaconda.com) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) following the official instructions.
+In order to void any issues with software versions, Fi-Cell utilises conda environments to automatically install all necessary dependencies. If conda is not present on your system, please install [anaconda](https://www.anaconda.com) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) following official instructions.
 
 ##### Once conda is ready, users can create an environment to install dependencies that Fi-Cell needs through the following commands:
 
@@ -33,7 +33,7 @@ mamba env create --file envs/FiCell.yaml
 conda activate FiCell
 ```
 
-##### Fi-Cell integrates a [ldsc](https://github.com/bulik/ldsc) tool, please install it before running Fi-Cell.
+##### Fi-Cell integrates the [ldsc](https://github.com/bulik/ldsc) tool, please install it before running Fi-Cell.
 
 ```shell
 cd your/dir/to/Fi-Cell
@@ -61,7 +61,7 @@ We recommend running with `-j` as it will use all available cores. Specifying `-
 
 
 
-** Step 1:  scRNA and scATAC co-assay **
+**Step 1: scRNA and scATAC co-assay**
 
 For each cell type, Fi-Cell takes scRNA and scATAC co-assay datasets with matched cell counts as input. 
 
@@ -99,20 +99,20 @@ and they should be merged into one [Signac](https://stuartlab.org/signac/) obeje
 
 
 
-The demanding requirements of Fi-Cell input can be easily satisfied with scRNA and scATAC co-assays. However, if you expected to **apply Fi-Cell on independent scRNA and scATAC datasets, datasets integration can be pivotal**. Here are some suggestions:
+The input requirements of Fi-Cell input is concordant with scRNA and scATAC co-assays. However, if you expected to **apply Fi-Cell on independent scRNA and scATAC datasets, datasets integration can be pivotal**. Here are some suggestions:
 
-1. The sources of the two datasets should be matched as similar as possible. 
-2. Cell type annotations can be varied in different datasets. It's OK to match cell types based on their literal names, but several methods used to unify cell annotations are more recommended:
+1. The biological sources of the two datasets should be matched as similar as possible. 
+2. Cell type clustering can be varied in different datasets. It's OK to match cell types based on their literal names, but several methods used to unify cell annotations are more recommended:
    1. `scJoint`: a transfer learning method to integrate atlas-scale, heterogeneous collections of scRNA-seq and scATAC-seq data. [available at: https://github.com/SydneyBioX/scJoint]
    2. `ATACANNOT`: a novel scATAC-seq cell type annotation method using scRNA-seq data as the reference. [available at: https://github.com/TianLab-Bioinfo/AtacAnnoR]
 3. After collecting scRNA and scATAC datasets with unified cell annotations, however, the cell counts are not identical in the two matrix, and cellular individuals are not matched. Once again, it's OK to randomly match cellular individuals (randomly sampling cells to meet identical cell counts), however, strategies like `scOptmatch` can be used to match cell individual optimally. 
    1. `scOptmatch`:  enabling approximately one-to-one pairing of cells of similar annotations between assays [available at:https://github.com/buenrostrolab/FigR/blob/HEAD/R/cellPairing.R]
 
-* *Though Fi-Cell can work well on embedded datasets, we still more encourage multi-modal dataset for existing regulatory effects and more robust phenotype-cell type associations.* 
+* *Though Fi-Cell can work well on embedded datasets, we still more encourage multi-modal dataset for robust regulatory effects and phenotype-cell type associations.* 
 
-**Step 2: cell type specificity of gene expression file**
+**Step 2: Gene expression specificity**
 
-Fi-Cell requires gene expression specificity files in each cell type, functioning as probablistic scores to constrcuct genomin annotions, formatted as follows (no column names in our examples):
+Fi-Cell requires gene expression specificity files in each cell type, serving as probablistic scores to constrcuct genomin annotions, formatted as follows (no column names in our examples):
 
 |   Gene   | Specificity |
 |:--------:|:-----------:|
@@ -185,15 +185,15 @@ An output directory of Fi-Cell  is shown:
 └── res/
 ```
 
-* `precomputation/cisCor/`: peak-gene connections
-  * `[cell_type]/chr*.tsv`: peak-gene connections from each chromosome.
-  * `[cell_type]/signac_peak_gene_links.tsv`: All peak-gene connections
-  * `[cell_type].snpped.tsv`: All peak-gene connections with HapMap3 SNPs under peak
-  * `[cell_type].pval5e-2.snpped.tsv`: Significantly correlated peak-gene connections with HapMap3 SNPs under peak
-* `precomputation/SNPs/`: hapmap3 SNPs uner peaks of cisCor
+* `precomputation/cisCor/`: peak-gene pairs
+  * `[cell_type]/chr*.tsv`: peak-gene pairs from each chromosome.
+  * `[cell_type]/signac_peak_gene_links.tsv`: All peak-gene pairs
+  * `[cell_type].snpped.tsv`: All peak-gene pairs with SNPs under peak
+  * `[cell_type].pval5e-2.snpped.tsv`: Significantly correlated peak-gene pairs with SNPs under peak
+* `precomputation/SNPs/`: SNPs uner peaks of cisCor
 * `precomputation/bed/`: bed files of SNPs, used to construct the annotation
-* `precomputation/Allcell-ldscore/`: merged cell type genomic annotations of all cell types
-* `precomputation/ldscore/`: splitted cell type genomic annotations of our primary analyses (including .annot and .ldscore files)
+* `precomputation/Allcell-ldscore/`: merged genomic annotations of all cell types
+* `precomputation/ldscore/`: splitted cell-type genomic annotations (including .annot and .ldscore files)
 * `res/`: S-LDSC results
 
 ## **Contributors**
